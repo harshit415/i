@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better box model handling */
+}
+
+#smallnav {
+    display: none;
+}
+
+#shownav {
+    width: 400px;
+    background-color: white;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -400px;
+    margin-bottom: 10px;
+}
+
+#shownav article div a {
+    color: black;
+}
+
+#shownav article {
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(170, 169, 169);
+}
+
+#nav {
+    padding: 20px;
+    display: flex;
+    box-shadow: 1px 1px black;
+    overflow-x: hidden;
+}
+
+#nav article {
+    display: flex;
+    align-items: center;
+}
+
+#nav article div a {
+    text-decoration: none;
+    margin: 20px;
+    color: black;
+}
+
+span {
+    margin: -5px;
+    align-items: center;
+}
+
+#nav article div button {
+    width: 100px;
+    height: 30px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 1025px) {
+    #nav {
+        display: none;
+    }
+
+    #smallnav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px; /* Adjusted for better spacing */
+    }
+
+    #smallnav article div i {
+        font-size: 28px;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    #input1:checked ~ #shownav {
+        left: 0;
+        transition: left 0.5s; /* Shortened transition for better UX */
+    }
+}
+
+#hero {
+    padding-left: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Use fractions for flexibility */
+    margin-top: 70px;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+#hero article div img {
+    width: 100%; /* Make images responsive */
+    max-width: 700px; /* Cap width to prevent overflow */
+}
+
+#hero article #div1 {
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(34, 34, 34);
+}
+
+#div2, #div3 {
+    color: rgb(34, 34, 34);
+}
+
+#div3 {
+    font-size: xx-small;
+}
+
+#hero article div button {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(215, 215, 12);
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#hero article #div4 button,
+#hero article #div5 button {
+    width: 100%; /* Make buttons responsive */
+    max-width: 300px; /* Optional max width */
+}
+
+@media (max-width: 1025px) {
+    #hero {
+        grid-template-columns: 1fr; /* Single column for smaller devices */
+    }
+
+    #hero article div img {
+        padding-right: 0; /* Remove padding */
+    }
+}
+
+@media (max-width: 425px) {
+    #hero {
+        grid-template-columns: 1fr; /* Ensure single column layout */
+    }
+
+    #hero article div img {
+        width: 100%; /* Full width on small screens */
+    }
+}
+
+#ft1 {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    width: auto;
+    justify-content: center;
+    column-gap: 20px; /* Adjusted spacing */
+    border-bottom: 1px solid rgb(34, 29, 29);
+}
+
+#ft1 article #div1 {
+    margin-bottom: 20px;
+    font-size: small;
+}
+
+#ft1 article #div2 {
+    margin: 10px;
+}
+
+
+@media (max-width: 1025px) {
+    #ft1 {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid for medium devices */
+    }
+}
+
+@media (max-width: 768px) {
+    #ft1 {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+}
